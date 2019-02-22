@@ -1,6 +1,7 @@
 package com.google.codelabs.mdc.kotlin.shipping
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.design.widget.TextInputLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -30,7 +31,7 @@ class ShippingInfoActivity : AppCompatActivity() {
             }
 
             if (noErrors) {
-                // All fields are valid!
+                Snackbar.make(rootView, "OK", Snackbar.LENGTH_LONG).show()
             }
         }
     }
