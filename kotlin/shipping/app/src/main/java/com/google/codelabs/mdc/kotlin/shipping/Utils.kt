@@ -1,7 +1,10 @@
 package com.google.codelabs.mdc.kotlin.shipping
 
+import android.support.design.widget.TextInputEditText
+import android.support.design.widget.TextInputLayout
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 
 import java.util.ArrayList
 
@@ -27,4 +30,12 @@ object Utils {
             }
         }
     }
+}
+
+fun TextInputLayout.getInputEditText(): TextInputEditText? {
+    for (i in 0 until childCount) {
+        val childView = getChildAt(i)
+        return (childView as? FrameLayout)?.getChildAt(0) as? TextInputEditText
+    }
+    return null
 }
